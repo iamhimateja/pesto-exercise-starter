@@ -1,11 +1,9 @@
-function updateInventory(args) {
-  const currentInventory = args[0];
-  const newInventory = args[1];
-  for (const newItem of newInventory) {
+function updateInventory(currentInventory, newInventory) {
+  for (let newItem of newInventory) {
     let itemFound = false;
-    for (const index in currentInventory) {
-      if (currentInventory[index][1] === newItem[1]) {
-        currentInventory[index][0] += newItem[0];
+    for (let i = 0; i < currentInventory.length; ++i) {
+      if (currentInventory[i][1] === newItem[1]) {
+        currentInventory[i][0] += newItem[0];
         itemFound = true;
         break;
       }

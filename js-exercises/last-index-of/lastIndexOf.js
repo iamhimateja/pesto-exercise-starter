@@ -1,7 +1,7 @@
 const lastIndexOf = (searchElement, array) => {
   let lastIndex;
-  // for..in will loop through all indexes including any invalid ones
-  for(let index = 0; index < array.length; index++) {
+  for (const index in array) {
+    if (index < 0) break;
     if (array[index] === searchElement) {
       lastIndex = parseInt(index);
     }
